@@ -245,9 +245,23 @@ define('ember-quickstart/router', ['exports', 'ember-quickstart/config/environme
     rootURL: _environment.default.rootURL
   });
 
-  Router.map(function () {});
+  Router.map(function () {
+    this.route('scientists');
+  });
 
   exports.default = Router;
+});
+define('ember-quickstart/routes/scientists', ['exports'], function (exports) {
+  'use strict';
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.Route.extend({
+    model: function model() {
+      return ['Marie Curie', 'Mae Jemison', 'Albert Hofmann'];
+    }
+  });
 });
 define('ember-quickstart/services/ajax', ['exports', 'ember-ajax/services/ajax'], function (exports, _ajax) {
   'use strict';
@@ -268,7 +282,15 @@ define("ember-quickstart/templates/application", ["exports"], function (exports)
   Object.defineProperty(exports, "__esModule", {
     value: true
   });
-  exports.default = Ember.HTMLBars.template({ "id": "BDGyUGam", "block": "{\"statements\":[[1,[26,[\"welcome-page\"]],false],[0,\"\\n\"],[0,\"\\n\"],[1,[26,[\"outlet\"]],false],[0,\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"hasPartials\":false}", "meta": { "moduleName": "ember-quickstart/templates/application.hbs" } });
+  exports.default = Ember.HTMLBars.template({ "id": "aF9ZxQHc", "block": "{\"statements\":[[11,\"h1\",[]],[13],[0,\"PeopleTracker\"],[14],[0,\"\\n\\n\"],[1,[26,[\"outlet\"]],false],[0,\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"hasPartials\":false}", "meta": { "moduleName": "ember-quickstart/templates/application.hbs" } });
+});
+define("ember-quickstart/templates/scientists", ["exports"], function (exports) {
+  "use strict";
+
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.default = Ember.HTMLBars.template({ "id": "X9A4aOgv", "block": "{\"statements\":[[11,\"h2\",[]],[13],[0,\"List of Scientists\"],[14],[0,\"\\n\\n\"],[11,\"ul\",[]],[13],[0,\"\\n\"],[6,[\"each\"],[[28,[\"model\"]]],null,{\"statements\":[[0,\"    \"],[11,\"li\",[]],[13],[1,[28,[\"scientist\"]],false],[14],[0,\"\\n\"]],\"locals\":[\"scientist\"]},null],[14],[0,\"\\n\"]],\"locals\":[],\"named\":[],\"yields\":[],\"hasPartials\":false}", "meta": { "moduleName": "ember-quickstart/templates/scientists.hbs" } });
 });
 
 
@@ -292,6 +314,6 @@ catch(err) {
 });
 
 if (!runningTests) {
-  require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+81f3a2cf"});
+  require("ember-quickstart/app")["default"].create({"name":"ember-quickstart","version":"0.0.0+5f9b9ba9"});
 }
 //# sourceMappingURL=ember-quickstart.map

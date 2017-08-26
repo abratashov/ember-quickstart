@@ -19,6 +19,11 @@ define('ember-quickstart/tests/app.lint-test', [], function () {
     assert.expect(1);
     assert.ok(true, 'router.js should pass ESLint\n\n');
   });
+
+  QUnit.test('routes/scientists.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'routes/scientists.js should pass ESLint\n\n');
+  });
 });
 define('ember-quickstart/tests/helpers/destroy-app', ['exports'], function (exports) {
   'use strict';
@@ -132,6 +137,24 @@ define('ember-quickstart/tests/tests.lint-test', [], function () {
   QUnit.test('test-helper.js', function (assert) {
     assert.expect(1);
     assert.ok(true, 'test-helper.js should pass ESLint\n\n');
+  });
+
+  QUnit.test('unit/routes/scientists-test.js', function (assert) {
+    assert.expect(1);
+    assert.ok(true, 'unit/routes/scientists-test.js should pass ESLint\n\n');
+  });
+});
+define('ember-quickstart/tests/unit/routes/scientists-test', ['ember-qunit'], function (_emberQunit) {
+  'use strict';
+
+  (0, _emberQunit.moduleFor)('route:scientists', 'Unit | Route | scientists', {
+    // Specify the other units that are required for this test.
+    // needs: ['controller:foo']
+  });
+
+  (0, _emberQunit.test)('it exists', function (assert) {
+    var route = this.subject();
+    assert.ok(route);
   });
 });
 require('ember-quickstart/tests/test-helper');
